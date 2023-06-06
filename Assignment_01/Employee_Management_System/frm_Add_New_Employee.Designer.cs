@@ -32,7 +32,7 @@ namespace Employee_Management_System
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Add_New_Employee));
             this.lbl_Add_New_Employee = new System.Windows.Forms.Label();
             this.lbl_DOB = new System.Windows.Forms.Label();
-            this.Designation = new System.Windows.Forms.Label();
+            this.lbl_Designation = new System.Windows.Forms.Label();
             this.lbl_Name = new System.Windows.Forms.Label();
             this.lbl_Mob_No = new System.Windows.Forms.Label();
             this.lbl_ID = new System.Windows.Forms.Label();
@@ -70,16 +70,16 @@ namespace Employee_Management_System
             this.lbl_DOB.TabIndex = 3;
             this.lbl_DOB.Text = "D.O.B.";
             // 
-            // Designation
+            // lbl_Designation
             // 
-            this.Designation.AutoSize = true;
-            this.Designation.Font = new System.Drawing.Font("Mongolian Baiti", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Designation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.Designation.Location = new System.Drawing.Point(152, 352);
-            this.Designation.Name = "Designation";
-            this.Designation.Size = new System.Drawing.Size(148, 29);
-            this.Designation.TabIndex = 6;
-            this.Designation.Text = "Designation";
+            this.lbl_Designation.AutoSize = true;
+            this.lbl_Designation.Font = new System.Drawing.Font("Mongolian Baiti", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Designation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lbl_Designation.Location = new System.Drawing.Point(152, 352);
+            this.lbl_Designation.Name = "lbl_Designation";
+            this.lbl_Designation.Size = new System.Drawing.Size(148, 29);
+            this.lbl_Designation.TabIndex = 6;
+            this.lbl_Designation.Text = "Designation";
             // 
             // lbl_Name
             // 
@@ -243,7 +243,7 @@ namespace Employee_Management_System
             this.Controls.Add(this.tb_ID);
             this.Controls.Add(this.lbl_Mob_No);
             this.Controls.Add(this.lbl_ID);
-            this.Controls.Add(this.Designation);
+            this.Controls.Add(this.lbl_Designation);
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.lbl_DOB);
             this.Controls.Add(this.lbl_Add_New_Employee);
@@ -264,7 +264,7 @@ namespace Employee_Management_System
 
         private System.Windows.Forms.Label lbl_Add_New_Employee;
         private System.Windows.Forms.Label lbl_DOB;
-        private System.Windows.Forms.Label Designation;
+        private System.Windows.Forms.Label lbl_Designation;
         private System.Windows.Forms.Label lbl_Name;
         private System.Windows.Forms.Label lbl_Mob_No;
         private System.Windows.Forms.Label lbl_ID;
