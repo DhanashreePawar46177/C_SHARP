@@ -71,6 +71,8 @@ namespace Employee_Mgt_System
             {
                 lbl_Note.Text = " Incorrect Username Or Password";
                 lbl_Note.ForeColor = Color.Tomato;
+
+                MessageBox.Show("Incorrect Usrename Or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             tb_Username.Clear();
