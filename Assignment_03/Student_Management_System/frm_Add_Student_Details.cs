@@ -18,7 +18,7 @@ namespace Student_Management_System
             InitializeComponent();
         }
 
-        SqlConnection Con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Student_Management_System_DB;Integrated Security=True");
+        SqlConnection Con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Student_Mgt_System_DB;Integrated Security=True");
 
         void Con_Open()
         {
@@ -35,8 +35,10 @@ namespace Student_Management_System
                 Con.Close();
             }
         }
+
         void Auto_Incr()
         {
+
             int Cnt = 0;
 
             Con_Open();
@@ -69,8 +71,8 @@ namespace Student_Management_System
             tb_Roll_No.Text = Convert.ToString(Cnt);
 
             Con_Close();
-
         }
+
         void Clear_Controls()
         {
             tb_Name.Text = "";
@@ -84,19 +86,19 @@ namespace Student_Management_System
 
         private void Only_Numeric(object sender, KeyPressEventArgs e)
         {
-            if(!(char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+            if (!(char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+            {
+                e.Handled = true;
+            }
+        }
+        private void Only_Text(object sender, KeyPressEventArgs e)
+        {
+            if(!(char.IsLetter(e.KeyChar) || (e.KeyChar == (char)Keys.Back) || (e.KeyChar == (char)Keys.Space)))
             {
                 e.Handled = true;
             }
         }
 
-        private void Only_Text(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsLetter(e.KeyChar) || (e.KeyChar == (char)Keys.Back) || (e.KeyChar == (char)Keys.Space)))
-            {
-                e.Handled = true;
-            }
-        }
         private void frm_Add_Student_Details_Load(object sender, EventArgs e)
         {
             tb_Name.Focus();
@@ -104,39 +106,32 @@ namespace Student_Management_System
             Auto_Incr();
         }
 
-        private void btn_Refresh_Click(object sender, EventArgs e)
-        {
-            Clear_Controls();
-        }
-
         private void btn_Save_Click(object sender, EventArgs e)
         {
             Con_Open();
 
-            if(tb_Roll_No.Text != ""&& tb_Name.Text != "" && tb_Mob_No.Text != "" && cmb_Courses.Text != "")
+            if (tb_Roll_No.Text != "" && tb_Name.Text != "" && tb_Mob_No.Text != "" && cmb_Courses.Text != "")
             {
                 SqlCommand Cmd = new SqlCommand();
 
                 Cmd.Connection = Con;
-                Cmd.CommandText = "Insert into Student_Details Values(@RN, @Nm, @Mob_No, @DOB, @Courses)";
+                Cmd.CommandText = "Insert into Student_Details Values(@RNo, @Nm, @MNo, @DOB, @Courses)";
 
-                Cmd.Parameters.Add("RN", SqlDbType.Int).Value = tb_Roll_No.Text;
+                Cmd.Parameters.Add("RNo", SqlDbType.Int).Value = tb_Roll_No.Text;
                 Cmd.Parameters.Add("Nm", SqlDbType.VarChar).Value = tb_Name.Text;
-                Cmd.Parameters.Add("Mob_No", SqlDbType.Decimal).Value = tb_Mob_No.Text;
+                Cmd.Parameters.Add("MNo", SqlDbType.Decimal).Value = tb_Mob_No.Text;
                 Cmd.Parameters.Add("DOB", SqlDbType.Date).Value = dtp_DOB.Value.Date;
                 Cmd.Parameters.Add("Courses", SqlDbType.NVarChar).Value = cmb_Courses.Text;
 
                 Cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Record Successfully Inserted", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("Record Inserted Successfully");
                 Clear_Controls();
             }
-
             else
             {
-                MessageBox.Show("Fill All Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }    
+                MessageBox.Show("Enter All Fields");
+            }
 
             Con_Close();
         }

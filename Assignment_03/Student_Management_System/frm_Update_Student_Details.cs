@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Student_Management_System
 {
@@ -18,7 +18,7 @@ namespace Student_Management_System
             InitializeComponent();
         }
 
-        SqlConnection Con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Student_Management_System_DB;Integrated Security=True");
+        SqlConnection Con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Student_Mgt_System_DB;Integrated Security=True");
 
         void Con_Open()
         {
@@ -79,7 +79,6 @@ namespace Student_Management_System
                 e.Handled = true;
             }
         }
-
         private void frm_Update_Student_Details_Load(object sender, EventArgs e)
         {
             tb_Roll_No.Focus();
@@ -96,7 +95,6 @@ namespace Student_Management_System
             if (tb_Roll_No.Text != "")
             {
                 Con_Open();
-
                 SqlCommand Cmd = new SqlCommand();
 
                 Cmd.Connection = Con;
@@ -124,7 +122,7 @@ namespace Student_Management_System
             }
             else
             {
-                MessageBox.Show("First Enter Roll Number", "Incomplete Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Enter Roll Number", "Incomplete Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             Con_Close();

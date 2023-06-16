@@ -19,8 +19,8 @@ namespace Student_Management_System
 
         private void frm_View_Student_List_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'student_Management_System_DBDataSet1.Student_Details' table. You can move, or remove it, as needed.
-            this.student_DetailsTableAdapter.Fill(this.student_Management_System_DBDataSet1.Student_Details);
+            // TODO: This line of code loads data into the 'student_Mgt_System_DBDataSet.Student_Details' table. You can move, or remove it, as needed.
+            this.student_DetailsTableAdapter.Fill(this.student_Mgt_System_DBDataSet.Student_Details);
 
         }
     }

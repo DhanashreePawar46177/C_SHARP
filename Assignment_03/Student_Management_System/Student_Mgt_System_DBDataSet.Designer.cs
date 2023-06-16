@@ -20,9 +20,9 @@ namespace Student_Management_System {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Student_Management_System_DBDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("Student_Mgt_System_DBDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Student_Management_System_DBDataSet : global::System.Data.DataSet {
+    public partial class Student_Mgt_System_DBDataSet : global::System.Data.DataSet {
         
         private Student_DetailsDataTable tableStudent_Details;
         
@@ -30,7 +30,7 @@ namespace Student_Management_System {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public Student_Management_System_DBDataSet() {
+        public Student_Mgt_System_DBDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Student_Management_System {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected Student_Management_System_DBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Student_Mgt_System_DBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace Student_Management_System {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Student_Management_System_DBDataSet cln = ((Student_Management_System_DBDataSet)(base.Clone()));
+            Student_Mgt_System_DBDataSet cln = ((Student_Mgt_System_DBDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace Student_Management_System {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Student_Management_System_DBDataSet";
+            this.DataSetName = "Student_Mgt_System_DBDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Student_Management_System_DBDataSet.xsd";
+            this.Namespace = "http://tempuri.org/Student_Mgt_System_DBDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableStudent_Details = new Student_DetailsDataTable();
@@ -225,7 +225,7 @@ namespace Student_Management_System {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Student_Management_System_DBDataSet ds = new Student_Management_System_DBDataSet();
+            Student_Mgt_System_DBDataSet ds = new Student_Mgt_System_DBDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -533,7 +533,7 @@ namespace Student_Management_System {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Student_Management_System_DBDataSet ds = new Student_Management_System_DBDataSet();
+                Student_Mgt_System_DBDataSet ds = new Student_Mgt_System_DBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -697,7 +697,7 @@ namespace Student_Management_System {
         }
     }
 }
-namespace Student_Management_System.Student_Management_System_DBDataSetTableAdapters {
+namespace Student_Management_System.Student_Mgt_System_DBDataSetTableAdapters {
     
     
     /// <summary>
@@ -870,7 +870,7 @@ SELECT Roll_No, Name, Mob_No, DOB, Courses FROM Student_Details WHERE (Roll_No =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Student_Management_System.Properties.Settings.Default.Student_Management_System_DBConnectionString;
+            this._connection.ConnectionString = global::Student_Management_System.Properties.Settings.Default.Student_Mgt_System_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -887,7 +887,7 @@ SELECT Roll_No, Name, Mob_No, DOB, Courses FROM Student_Details WHERE (Roll_No =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Student_Management_System_DBDataSet.Student_DetailsDataTable dataTable) {
+        public virtual int Fill(Student_Mgt_System_DBDataSet.Student_DetailsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -900,9 +900,9 @@ SELECT Roll_No, Name, Mob_No, DOB, Courses FROM Student_Details WHERE (Roll_No =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Student_Management_System_DBDataSet.Student_DetailsDataTable GetData() {
+        public virtual Student_Mgt_System_DBDataSet.Student_DetailsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Student_Management_System_DBDataSet.Student_DetailsDataTable dataTable = new Student_Management_System_DBDataSet.Student_DetailsDataTable();
+            Student_Mgt_System_DBDataSet.Student_DetailsDataTable dataTable = new Student_Mgt_System_DBDataSet.Student_DetailsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -910,14 +910,14 @@ SELECT Roll_No, Name, Mob_No, DOB, Courses FROM Student_Details WHERE (Roll_No =
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Student_Management_System_DBDataSet.Student_DetailsDataTable dataTable) {
+        public virtual int Update(Student_Mgt_System_DBDataSet.Student_DetailsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Student_Management_System_DBDataSet dataSet) {
+        public virtual int Update(Student_Mgt_System_DBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Student_Details");
         }
         
@@ -1159,7 +1159,7 @@ SELECT Roll_No, Name, Mob_No, DOB, Courses FROM Student_Details WHERE (Roll_No =
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(Student_Management_System_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Student_Mgt_System_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._student_DetailsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Student_Details.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1178,7 +1178,7 @@ SELECT Roll_No, Name, Mob_No, DOB, Courses FROM Student_Details WHERE (Roll_No =
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(Student_Management_System_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Student_Mgt_System_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._student_DetailsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Student_Details.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1196,7 +1196,7 @@ SELECT Roll_No, Name, Mob_No, DOB, Courses FROM Student_Details WHERE (Roll_No =
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(Student_Management_System_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Student_Mgt_System_DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._student_DetailsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Student_Details.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1238,7 +1238,7 @@ SELECT Roll_No, Name, Mob_No, DOB, Courses FROM Student_Details WHERE (Roll_No =
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(Student_Management_System_DBDataSet dataSet) {
+        public virtual int UpdateAll(Student_Mgt_System_DBDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

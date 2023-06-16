@@ -18,9 +18,11 @@ namespace Student_Management_System
             InitializeComponent();
         }
 
+        SqlConnection Con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Student_Mgt_System_DB;Integrated Security=True");
+
         void Con_Open()
         {
-            if(Con.State != ConnectionState.Open)
+            if (Con.State != ConnectionState.Open)
             {
                 Con.Open();
             }
@@ -28,25 +30,33 @@ namespace Student_Management_System
 
         void Con_Close()
         {
-            if(Con.State != ConnectionState.Closed)
+            if (Con.State != ConnectionState.Closed)
             {
                 Con.Close();
             }
         }
 
-        SqlConnection Con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Student_Management_System_DB;Integrated Security=True");
-
-
         private void frm_Login_Load(object sender, EventArgs e)
         {
-            lbl_Note.Text = "Enter Valid Username && Password";
+            tb_Username.Focus();
+            lbl_Note.Text = "Enter Correct Username And Password";
+            lbl_Note.ForeColor = Color.Red;
+        }
+
+        private void tb_Username_TextChanged(object sender, EventArgs e)
+        {
+            tb_Password.Enabled = true;
+        }
+
+        private void tb_Password_TextChanged(object sender, EventArgs e)
+        {
+            btn_Submit.Enabled = true;
         }
 
         private void btn_Submit_Click(object sender, EventArgs e)
         {
-            int Cnt = 0;
-
             Con_Open();
+            int Cnt = 0;
 
             SqlCommand Cmd = new SqlCommand();
 
@@ -58,9 +68,9 @@ namespace Student_Management_System
 
             Cnt = Convert.ToInt32(Cmd.ExecuteScalar());
 
-            if(Cnt > 0)
+            if (Cnt > 0)
             {
-                MessageBox.Show("Login Successful","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Login Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 Common_Content.Log_Nm = tb_Username.Text;
 
@@ -68,24 +78,16 @@ namespace Student_Management_System
                 Obj.Show();
                 this.Hide();
             }
-
             else
             {
                 MessageBox.Show("Incorrect Username Or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lbl_Note.ForeColor = Color.Red;
             }
 
+            tb_Username.Clear();
+            tb_Password.Clear();
+
             Con_Close();
-        }
-
-        private void tb_Username_TextChanged(object sender, EventArgs e)
-        {
-            lbl_Note.Visible = true;
-            tb_Password.Enabled = true;
-        }
-
-        private void tb_Password_TextChanged(object sender, EventArgs e)
-        {
-            btn_Submit.Enabled = true;
         }
     }
 }
