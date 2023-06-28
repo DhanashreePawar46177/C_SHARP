@@ -55,7 +55,7 @@ namespace Controls_Assignment
         private void btn_Submit_Click(object sender, EventArgs e)
         {
             string Result = "";
-            bool Flag = false;
+            bool Flag = true;
 
             if (tb_Emp_Name.Text != "")
             {
@@ -65,7 +65,7 @@ namespace Controls_Assignment
             else
             {
                 lbl_Name_Error.Visible = true;
-                Flag = true;
+                Flag = false;
             }
 
             if (cmb_Emp_Dept.Text != "")
@@ -76,7 +76,7 @@ namespace Controls_Assignment
             else
             {
                 lbl_Dept_Error.Visible = true;
-                Flag = true;
+                Flag = false;
             }
 
             if (rb_Female.Checked == true)
@@ -92,7 +92,7 @@ namespace Controls_Assignment
             else
             {
                 lbl_Gender_Error.Visible = true;
-                Flag = true;
+                Flag = false;
             }
 
             if (cb_Marathi.Checked == true)
@@ -186,6 +186,7 @@ namespace Controls_Assignment
             else
             {
                 lbl_Lang_Error.Visible = true;
+                Flag = false;
             }
 
             int Cnt = clb_Hobbies.CheckedItems.Count;
@@ -193,6 +194,12 @@ namespace Controls_Assignment
             if(Cnt > 0)
             {
                 Result += "Hobbies are ";
+                lbl_Hobbies_Error.Visible = false;
+            }
+            else
+            {
+                lbl_Hobbies_Error.Visible = true;
+                Flag = false;
             }
             
             for(int i = 0; i < clb_Hobbies.Items.Count; i++)
@@ -213,7 +220,12 @@ namespace Controls_Assignment
 
             if (Flag == false)
             {
+                lbl_Result.Visible = false;
+            }
+            else
+            {
                 lbl_Result.Text = Result;
+                lbl_Result.Visible = true;
             }
         }
     }
