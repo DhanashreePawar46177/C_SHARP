@@ -34,6 +34,10 @@ namespace Controls_Assignment
             this.btn_Submit = new System.Windows.Forms.Button();
             this.lbl_Output = new System.Windows.Forms.Label();
             this.gb_Lang = new System.Windows.Forms.GroupBox();
+            this.cb_French = new System.Windows.Forms.CheckBox();
+            this.cb_English = new System.Windows.Forms.CheckBox();
+            this.cb_Hindi = new System.Windows.Forms.CheckBox();
+            this.cb_Marathi = new System.Windows.Forms.CheckBox();
             this.gb_Gender = new System.Windows.Forms.GroupBox();
             this.rb_Male = new System.Windows.Forms.RadioButton();
             this.rb_Female = new System.Windows.Forms.RadioButton();
@@ -44,10 +48,6 @@ namespace Controls_Assignment
             this.lbl_Emp_Dept = new System.Windows.Forms.Label();
             this.lbl_Emp_Name = new System.Windows.Forms.Label();
             this.lbl_Emp_Details = new System.Windows.Forms.Label();
-            this.cb_Marathi = new System.Windows.Forms.CheckBox();
-            this.cb_Hindi = new System.Windows.Forms.CheckBox();
-            this.cb_English = new System.Windows.Forms.CheckBox();
-            this.cb_French = new System.Windows.Forms.CheckBox();
             this.lbl_Hobbies = new System.Windows.Forms.Label();
             this.clb_Hobbies = new System.Windows.Forms.CheckedListBox();
             this.pnl_Output = new System.Windows.Forms.Panel();
@@ -112,6 +112,46 @@ namespace Controls_Assignment
             this.gb_Lang.Size = new System.Drawing.Size(278, 110);
             this.gb_Lang.TabIndex = 21;
             this.gb_Lang.TabStop = false;
+            // 
+            // cb_French
+            // 
+            this.cb_French.AutoSize = true;
+            this.cb_French.Location = new System.Drawing.Point(154, 72);
+            this.cb_French.Name = "cb_French";
+            this.cb_French.Size = new System.Drawing.Size(73, 22);
+            this.cb_French.TabIndex = 3;
+            this.cb_French.Text = "French";
+            this.cb_French.UseVisualStyleBackColor = true;
+            // 
+            // cb_English
+            // 
+            this.cb_English.AutoSize = true;
+            this.cb_English.Location = new System.Drawing.Point(27, 72);
+            this.cb_English.Name = "cb_English";
+            this.cb_English.Size = new System.Drawing.Size(79, 22);
+            this.cb_English.TabIndex = 2;
+            this.cb_English.Text = "English";
+            this.cb_English.UseVisualStyleBackColor = true;
+            // 
+            // cb_Hindi
+            // 
+            this.cb_Hindi.AutoSize = true;
+            this.cb_Hindi.Location = new System.Drawing.Point(154, 28);
+            this.cb_Hindi.Name = "cb_Hindi";
+            this.cb_Hindi.Size = new System.Drawing.Size(67, 22);
+            this.cb_Hindi.TabIndex = 1;
+            this.cb_Hindi.Text = "Hindi";
+            this.cb_Hindi.UseVisualStyleBackColor = true;
+            // 
+            // cb_Marathi
+            // 
+            this.cb_Marathi.AutoSize = true;
+            this.cb_Marathi.Location = new System.Drawing.Point(27, 28);
+            this.cb_Marathi.Name = "cb_Marathi";
+            this.cb_Marathi.Size = new System.Drawing.Size(80, 22);
+            this.cb_Marathi.TabIndex = 0;
+            this.cb_Marathi.Text = "Marathi";
+            this.cb_Marathi.UseVisualStyleBackColor = true;
             // 
             // gb_Gender
             // 
@@ -228,46 +268,6 @@ namespace Controls_Assignment
             this.lbl_Emp_Details.TabIndex = 13;
             this.lbl_Emp_Details.Text = "Employee Details";
             // 
-            // cb_Marathi
-            // 
-            this.cb_Marathi.AutoSize = true;
-            this.cb_Marathi.Location = new System.Drawing.Point(27, 28);
-            this.cb_Marathi.Name = "cb_Marathi";
-            this.cb_Marathi.Size = new System.Drawing.Size(80, 22);
-            this.cb_Marathi.TabIndex = 0;
-            this.cb_Marathi.Text = "Marathi";
-            this.cb_Marathi.UseVisualStyleBackColor = true;
-            // 
-            // cb_Hindi
-            // 
-            this.cb_Hindi.AutoSize = true;
-            this.cb_Hindi.Location = new System.Drawing.Point(154, 28);
-            this.cb_Hindi.Name = "cb_Hindi";
-            this.cb_Hindi.Size = new System.Drawing.Size(67, 22);
-            this.cb_Hindi.TabIndex = 1;
-            this.cb_Hindi.Text = "Hindi";
-            this.cb_Hindi.UseVisualStyleBackColor = true;
-            // 
-            // cb_English
-            // 
-            this.cb_English.AutoSize = true;
-            this.cb_English.Location = new System.Drawing.Point(27, 72);
-            this.cb_English.Name = "cb_English";
-            this.cb_English.Size = new System.Drawing.Size(79, 22);
-            this.cb_English.TabIndex = 2;
-            this.cb_English.Text = "English";
-            this.cb_English.UseVisualStyleBackColor = true;
-            // 
-            // cb_French
-            // 
-            this.cb_French.AutoSize = true;
-            this.cb_French.Location = new System.Drawing.Point(154, 72);
-            this.cb_French.Name = "cb_French";
-            this.cb_French.Size = new System.Drawing.Size(73, 22);
-            this.cb_French.TabIndex = 3;
-            this.cb_French.Text = "French";
-            this.cb_French.UseVisualStyleBackColor = true;
-            // 
             // lbl_Hobbies
             // 
             this.lbl_Hobbies.AutoSize = true;
@@ -322,9 +322,10 @@ namespace Controls_Assignment
             this.lbl_Name_Error.ForeColor = System.Drawing.Color.Crimson;
             this.lbl_Name_Error.Location = new System.Drawing.Point(250, 138);
             this.lbl_Name_Error.Name = "lbl_Name_Error";
-            this.lbl_Name_Error.Size = new System.Drawing.Size(85, 18);
+            this.lbl_Name_Error.Size = new System.Drawing.Size(86, 18);
             this.lbl_Name_Error.TabIndex = 29;
-            this.lbl_Name_Error.Text = "Name Error";
+            this.lbl_Name_Error.Text = "Enter Name";
+            this.lbl_Name_Error.Visible = false;
             // 
             // lbl_Dept_Error
             // 
@@ -334,9 +335,10 @@ namespace Controls_Assignment
             this.lbl_Dept_Error.ForeColor = System.Drawing.Color.Crimson;
             this.lbl_Dept_Error.Location = new System.Drawing.Point(250, 243);
             this.lbl_Dept_Error.Name = "lbl_Dept_Error";
-            this.lbl_Dept_Error.Size = new System.Drawing.Size(80, 18);
+            this.lbl_Dept_Error.Size = new System.Drawing.Size(125, 18);
             this.lbl_Dept_Error.TabIndex = 30;
-            this.lbl_Dept_Error.Text = "Dept Error";
+            this.lbl_Dept_Error.Text = "Select Department";
+            this.lbl_Dept_Error.Visible = false;
             // 
             // lbl_Gender_Error
             // 
@@ -348,7 +350,8 @@ namespace Controls_Assignment
             this.lbl_Gender_Error.Name = "lbl_Gender_Error";
             this.lbl_Gender_Error.Size = new System.Drawing.Size(95, 18);
             this.lbl_Gender_Error.TabIndex = 31;
-            this.lbl_Gender_Error.Text = "Gender Error";
+            this.lbl_Gender_Error.Text = "Select Gender";
+            this.lbl_Gender_Error.Visible = false;
             // 
             // lbl_Lang_Error
             // 
@@ -358,9 +361,10 @@ namespace Controls_Assignment
             this.lbl_Lang_Error.ForeColor = System.Drawing.Color.Crimson;
             this.lbl_Lang_Error.Location = new System.Drawing.Point(723, 205);
             this.lbl_Lang_Error.Name = "lbl_Lang_Error";
-            this.lbl_Lang_Error.Size = new System.Drawing.Size(83, 18);
+            this.lbl_Lang_Error.Size = new System.Drawing.Size(111, 18);
             this.lbl_Lang_Error.TabIndex = 32;
-            this.lbl_Lang_Error.Text = "Lang Error";
+            this.lbl_Lang_Error.Text = "Select Language";
+            this.lbl_Lang_Error.Visible = false;
             // 
             // lbl_Hobbies_Error
             // 
@@ -370,9 +374,10 @@ namespace Controls_Assignment
             this.lbl_Hobbies_Error.ForeColor = System.Drawing.Color.Crimson;
             this.lbl_Hobbies_Error.Location = new System.Drawing.Point(723, 367);
             this.lbl_Hobbies_Error.Name = "lbl_Hobbies_Error";
-            this.lbl_Hobbies_Error.Size = new System.Drawing.Size(102, 18);
+            this.lbl_Hobbies_Error.Size = new System.Drawing.Size(92, 18);
             this.lbl_Hobbies_Error.TabIndex = 33;
-            this.lbl_Hobbies_Error.Text = "Hobbies Error";
+            this.lbl_Hobbies_Error.Text = "Select Hobby";
+            this.lbl_Hobbies_Error.Visible = false;
             // 
             // frm_Use_CheckBox_Checklist
             // 

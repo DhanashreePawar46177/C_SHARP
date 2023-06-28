@@ -17,23 +17,6 @@ namespace Controls_Assignment
             InitializeComponent();
         }
 
-        void UnVisible_Controls()
-        {
-            lbl_Name_Error.Visible = false;
-            lbl_Dept_Error.Visible = false;
-            lbl_Gender_Error.Visible = false;
-            lbl_Lang_Error.Visible = false;
-            lbl_Hobbies_Error.Visible = false;
-        }
-
-        void Visible_Controls()
-        {
-            lbl_Name_Error.Visible = true;
-            lbl_Dept_Error.Visible = true;
-            lbl_Gender_Error.Visible = true;
-            lbl_Lang_Error.Visible = true;
-            lbl_Hobbies_Error.Visible = true;
-        }
         private void Only_Text(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsLetter(e.KeyChar) || (e.KeyChar == (char)Keys.Back) || (e.KeyChar == (char)Keys.Space)))
@@ -45,7 +28,6 @@ namespace Controls_Assignment
         private void frm_Use_CheckBox_Checklist_Load(object sender, EventArgs e)
         {
             tb_Emp_Name.Focus();
-            UnVisible_Controls();
         }
 
         private void btn_Refresh_Click(object sender, EventArgs e)
@@ -61,8 +43,13 @@ namespace Controls_Assignment
             cb_English.Checked = false;
             cb_French.Checked = false;
 
+            for (int i = 0; i < clb_Hobbies.Items.Count; i++)
+            {
+                clb_Hobbies.SetItemChecked(i, false);
+                clb_Hobbies.SelectedIndex = -1;
+            }
+
             lbl_Result.Text = "";
-            UnVisible_Controls();
         }
 
         private void btn_Submit_Click(object sender, EventArgs e)
@@ -70,131 +57,160 @@ namespace Controls_Assignment
             string Result = "";
             bool Flag = false;
 
-            UnVisible_Controls();
-
             if (tb_Emp_Name.Text != "")
             {
                 Result = tb_Emp_Name.Text;
-
-                if (cmb_Emp_Dept.Text != "")
-                {
-                    Result += " from department " + cmb_Emp_Dept.Text + " is ";
-
-                    if (rb_Female.Checked == true)
-                    {
-                        Result += rb_Female.Text + " candidate.Known Languages ";
-                    }
-                    else if (rb_Male.Checked == true)
-                    {
-                        Result += rb_Male.Text + " candidate.Known Languages ";
-                    }
-                    else
-                    {
-                        lbl_Gender_Error.Visible = true;
-                        lbl_Gender_Error.Text = "Select Gender";
-                        Flag = true;
-                    }
-
-                    if(cb_Marathi.Checked == true)
-                    {
-                        if(cb_Hindi.Checked == true)
-                        {
-                            if(cb_English.Checked == true)
-                            {
-                                if(cb_French.Checked == true)
-                                {
-                                    Result += " are " + cb_Marathi.Text + " , " + cb_Hindi.Text + " , " + cb_English.Text + " , " + cb_French.Text + " . ";
-                                }
-                                else
-                                {
-                                    Result += " are " + cb_Marathi.Text + " , " + cb_Hindi.Text + " , " + cb_English.Text + " . ";
-                                }
-                            }
-                            else if(cb_French.Checked == true)
-                            {
-                                Result += " are " + cb_Marathi.Text + " , " + cb_Hindi.Text + " , " + cb_French.Text + " . ";
-                            }
-                            else 
-                            {
-                                Result += " are " + cb_Marathi.Text + " , " + cb_Hindi.Text + " . ";
-                            }
-                        }
-                        else if (cb_English.Checked == true)
-                        {
-                            if (cb_French.Checked == true)
-                            {
-                                Result += " are " + cb_Marathi.Text + " , " + cb_English.Text + " , " + cb_French.Text + " . ";
-                            }
-                            else
-                            {
-                                Result += " are " + cb_Marathi.Text + " , " + cb_English.Text + " . ";
-                            }
-                        }
-                        else if(cb_French.Checked == true)
-                        {
-                            Result += " are " + cb_Marathi.Text + " , " + cb_French.Text + " . ";
-                        }
-                        else
-                        {
-                            Result += " is " + cb_Marathi.Text + " . ";
-                        }
-                    }
-                    else if(cb_Hindi.Checked == true)
-                    {
-                        if(cb_English.Checked == true)
-                        {
-                            if(cb_French.Checked == true)
-                            {
-                                Result += " are " + cb_Hindi.Text + " , " + cb_English.Text + " , " + cb_French.Text + " . ";
-                            }
-                            else
-                            {
-                                Result += " are " + cb_Hindi.Text + " , " + cb_English.Text + " . ";
-                            }
-                        }
-                        else if(cb_French.Checked == true)
-                        {
-                            Result += " are " + cb_Hindi.Text + " , " + cb_French.Text + " . ";
-                        }
-                        else
-                        {
-                            Result += " is " + cb_Hindi.Text + " . ";
-                        }
-                    }
-                    else if (cb_English.Checked == true)
-                    {
-                        if(cb_French.Checked == true)
-                        {
-                            Result += " are " + cb_English.Text + " , " + cb_French.Text + " . ";
-                        }
-                        else
-                        {
-                            Result += " are " + cb_English.Text + " . ";
-                        }
-                    }
-                    else if (cb_French.Checked == true)
-                    {
-                        Result += " is " + cb_French.Text + " . ";
-                    }
-                    else
-                    {
-                        lbl_Lang_Error.Visible = true;
-                        lbl_Lang_Error.Text = "Enter At Least One Language.";
-                    }
-                }
-                else
-                {
-                    lbl_Dept_Error.Visible = true;
-                    lbl_Dept_Error.Text = "Select Department";
-                    Flag = true;
-                }
+                lbl_Name_Error.Visible = false;
             }
             else
             {
                 lbl_Name_Error.Visible = true;
-                lbl_Name_Error.Text = "Enter Employee Name";
                 Flag = true;
             }
+
+            if (cmb_Emp_Dept.Text != "")
+            {
+                Result += " from department " + cmb_Emp_Dept.Text + " is ";
+                lbl_Dept_Error.Visible = false;
+            }
+            else
+            {
+                lbl_Dept_Error.Visible = true;
+                Flag = true;
+            }
+
+            if (rb_Female.Checked == true)
+            {
+                Result += rb_Female.Text + " candidate.Known Languages";
+                lbl_Gender_Error.Visible = false;
+            }
+            else if (rb_Male.Checked == true)
+            {
+                Result += rb_Male.Text + " candidate.Known Languages";
+                lbl_Gender_Error.Visible = false;
+            }
+            else
+            {
+                lbl_Gender_Error.Visible = true;
+                Flag = true;
+            }
+
+            if (cb_Marathi.Checked == true)
+            {
+                lbl_Lang_Error.Visible = false;
+
+                if (cb_Hindi.Checked == true)
+                {
+                    if (cb_English.Checked == true)
+                    {
+                        if (cb_French.Checked == true)
+                        {
+                            Result += " are " + cb_Marathi.Text + " , " + cb_Hindi.Text + " , " + cb_English.Text + " , " + cb_French.Text + " . ";
+                        }
+                        else
+                        {
+                            Result += " are " + cb_Marathi.Text + " , " + cb_Hindi.Text + " , " + cb_English.Text + " . ";
+                        }
+                    }
+                    else if (cb_French.Checked == true)
+                    {
+                        Result += " are " + cb_Marathi.Text + " , " + cb_Hindi.Text + " , " + cb_French.Text + " . ";
+                    }
+                    else
+                    {
+                        Result += " are " + cb_Marathi.Text + " , " + cb_Hindi.Text + " . ";
+                    }
+                }
+                else if (cb_English.Checked == true)
+                {
+                    if (cb_French.Checked == true)
+                    {
+                        Result += " are " + cb_Marathi.Text + " , " + cb_English.Text + " , " + cb_French.Text + " . ";
+                    }
+                    else
+                    {
+                        Result += " are " + cb_Marathi.Text + " , " + cb_English.Text + " . ";
+                    }
+                }
+                else if (cb_French.Checked == true)
+                {
+                    Result += " are " + cb_Marathi.Text + " , " + cb_French.Text + " . ";
+                }
+                else
+                {
+                    Result += " is " + cb_Marathi.Text + " . ";
+                }
+            }
+            else if (cb_Hindi.Checked == true)
+            {
+                lbl_Lang_Error.Visible = false;
+
+                if (cb_English.Checked == true)
+                {
+                    if (cb_French.Checked == true)
+                    {
+                        Result += " are " + cb_Hindi.Text + " , " + cb_English.Text + " , " + cb_French.Text + " . ";
+                    }
+                    else
+                    {
+                        Result += " are " + cb_Hindi.Text + " , " + cb_English.Text + " . ";
+                    }
+                }
+                else if (cb_French.Checked == true)
+                {
+                    Result += " are " + cb_Hindi.Text + " , " + cb_French.Text + " . ";
+                }
+                else
+                {
+                    Result += " is " + cb_Hindi.Text + " . ";
+                }
+            }
+            else if (cb_English.Checked == true)
+            {
+                lbl_Lang_Error.Visible = false;
+
+                if (cb_French.Checked == true)
+                {
+                    Result += " are " + cb_English.Text + " , " + cb_French.Text + " . ";
+                }
+                else
+                {
+                    Result += " is " + cb_English.Text + " . ";
+                }
+            }
+            else if (cb_French.Checked == true)
+            {
+                Result += " is " + cb_French.Text + " . ";
+                lbl_Lang_Error.Visible = false;
+            }
+            else
+            {
+                lbl_Lang_Error.Visible = true;
+            }
+
+            int Cnt = clb_Hobbies.CheckedItems.Count;
+
+            if(Cnt > 0)
+            {
+                Result += "Hobbies are ";
+            }
+            
+            for(int i = 0; i < clb_Hobbies.Items.Count; i++)
+            {
+                if(clb_Hobbies.GetItemChecked(i))
+                {
+                    if(Cnt > 1)
+                    {
+                        Result += clb_Hobbies.Items[i] + " , ";
+                    }
+                    else
+                    {
+                        Result += clb_Hobbies.Items[i] + " . ";
+                    }
+                    Cnt--;
+                }
+            }
+
             if (Flag == false)
             {
                 lbl_Result.Text = Result;
