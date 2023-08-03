@@ -1,0 +1,11 @@
+D:\Dhanashree\Dhanu\FORK_INFOSYSTEMS\C# Proj 10\Assignment_06\Picture_Box\bin\Debug\Picture_Box.exe.config
+D:\Dhanashree\Dhanu\FORK_INFOSYSTEMS\C# Proj 10\Assignment_06\Picture_Box\bin\Debug\Picture_Box.exe
+D:\Dhanashree\Dhanu\FORK_INFOSYSTEMS\C# Proj 10\Assignment_06\Picture_Box\bin\Debug\Picture_Box.pdb
+D:\Dhanashree\Dhanu\FORK_INFOSYSTEMS\C# Proj 10\Assignment_06\Picture_Box\obj\Debug\Picture_Box.csproj.AssemblyReference.cache
+D:\Dhanashree\Dhanu\FORK_INFOSYSTEMS\C# Proj 10\Assignment_06\Picture_Box\obj\Debug\Picture_Box.frm_Add_Image.resources
+D:\Dhanashree\Dhanu\FORK_INFOSYSTEMS\C# Proj 10\Assignment_06\Picture_Box\obj\Debug\Picture_Box.frm_Show_Image.resources
+D:\Dhanashree\Dhanu\FORK_INFOSYSTEMS\C# Proj 10\Assignment_06\Picture_Box\obj\Debug\Picture_Box.Properties.Resources.resources
+D:\Dhanashree\Dhanu\FORK_INFOSYSTEMS\C# Proj 10\Assignment_06\Picture_Box\obj\Debug\Picture_Box.csproj.GenerateResource.cache
+D:\Dhanashree\Dhanu\FORK_INFOSYSTEMS\C# Proj 10\Assignment_06\Picture_Box\obj\Debug\Picture_Box.csproj.CoreCompileInputs.cache
+D:\Dhanashree\Dhanu\FORK_INFOSYSTEMS\C# Proj 10\Assignment_06\Picture_Box\obj\Debug\Picture_Box.exe
+D:\Dhanashree\Dhanu\FORK_INFOSYSTEMS\C# Proj 10\Assignment_06\Picture_Box\obj\Debug\Picture_Box.pdb
